@@ -8,7 +8,7 @@ function getComputerChoice(){//get the computer selection
     return choice[randomNum];
 }
 
-function playRound(e){
+function playRound(e){//rps is played whenever user click on the options
     const playerSelection = e.target.value.toUpperCase();
     const computerSelection = getComputerChoice().toUpperCase();
     if (playerSelection === computerSelection.toUpperCase()){
@@ -18,25 +18,26 @@ function playRound(e){
     || playerSelection==='PAPER' && computerSelection =='SCISSORS' 
     || playerSelection ==='SCISSORS' && computerSelection ==='ROCK'){
         computerWin++;
-        displayResult.textContent = `You lose! ${computerSelection} beats ${playerSelection}`
     }
     else{
         playerWin++;
-        displayResult.textContent = `You win! ${playerSelection} beats ${computerSelection}`
     }
-    if (computerWin + playerWin >= 5){
-        displayResult.innerHTML = `<div class='score'>Your Win: ${playerWin} Computer Win: ${computerWin}</div>`
+    playerPoint.textContent = playerWin;
+    computerPoint.textContent = computerWin;
+    if (computerWin >= 5 || playerWin >= 5){//checks the winner if computer or player wins 5 round
         if(computerWin > playerWin){
-            displayResult.innerHTML += `<div class = winner>Computer Win</div>`
+            displayWinner.innerHTML = `Computer Wins`;
         }
         else{
-            displayResult.innerHTML += `<div class = winner>You Win</div>`
+            displayWinner.innerHTML = `You Win`;
         }
         [computerWin, playerWin] = [0,0];
     }
 }
 
 const selections = document.querySelectorAll('.selection');
-const displayResult = document.querySelector('.result');
+const playerPoint = document.querySelector('.player-point');
+const computerPoint = document.querySelector('.computer-point');
+const displayWinner = document.querySelector('.winner');
 
 selections.forEach(selection => selection.addEventListener('click', playRound))

@@ -4,25 +4,46 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Bungee Spice', cursive;
 }
 body{
     background-color: rgba(56, 50, 35, 0.84);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 .header{
-    font-family: 'Bungee Spice', cursive;
     font-size: 26px;
     padding: 30px;
     text-align: center;
     background-color: rgba(56, 50, 35, 1);
+    border: 1px solid yellow;
 }
 .selections{
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid yellow;
-    padding: 40px;
+    padding: 70px;
     gap: 50px;
 }
 .selections .selection{
-    padding: 30px;
+    font-size: 25px;
+    height: 80px;
+    width: 150px;
+    background-color: rgba(56, 50, 35, 0.7);
+}
+.result{
+    flex: 1;
+    border: 1px solid yellow;
+}
+.point-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+}
+.winner{
+    text-align: center;
+    font-size: 28px;
+    padding: 40px;
 }
