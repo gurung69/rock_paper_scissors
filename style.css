@@ -19,7 +19,7 @@ body{
     background-color: rgba(56, 50, 35, 1);
     border: 1px solid yellow;
 }
-.selections{
+.selections, .play-again{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,7 @@ body{
     padding: 70px;
     gap: 50px;
 }
-.selections .selection{
+.selections .selection, .new-game{
     font-size: 25px;
     height: 80px;
     width: 150px;
@@ -46,4 +46,7 @@ body{
     text-align: center;
     font-size: 28px;
     padding: 40px;
+}
+.hidden{
+    display: none;
 }
